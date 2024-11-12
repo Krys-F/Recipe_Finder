@@ -1,0 +1,65 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(0, 0%, 90%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  gap: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.h1-main{
+  font-size: 3.2rem;
+}
+
+.search-bar{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.search-input{
+  height: 3rem;
+  width: 100%;
+  border-radius: .5rem;;
+}
+
+.search-btn{
+  width: 10rem;
+  border-radius: 0.5rem;
+}
+
+.recipe-container{
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: minmax(30rem, auto);
+  gap: 1rem;
+}
