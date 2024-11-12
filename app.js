@@ -1,26 +1,26 @@
+import { fetchAPI } from "./api_connection.js";
+import { getInput } from "./searching.js"; 
 
 
-const fetchAPI = async (query) => {
-  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
+const searchBtn = document.querySelector('.search-btn');
+const searchInput = document.querySelector('.search-input');
+const recipesContainer = document.querySelector('.recipe-container');
+console.log(searchBtn);
+console.log(searchInput);
+console.log(recipesContainer);
 
-  try{
-    const response = await fetch(url);
-    if(!response.ok) {
-      throw new Error('failed to fetch data');
-    } else {
-      const data = response.json();
-      return data;
-    }
-  } catch (error) {
+searchBtn.addEventListener('click', async () => {
+  const query = getInput(searchInput);
+  if (!query) {
+    return
+  } 
+  try {   
+    const meals = await fetchAPI(query);
+    console.log(meals);
+    // display recipes function
+} catch (error) {
     console.log(error);
-    // Error message in container with recipes
+    // Display error function
   }
-}
+})
 
-fetchAPI('chicken')
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  })
