@@ -1,6 +1,6 @@
 import { fetchAPI } from "./api_connection.js";
 import { getInput } from "./searching.js"; 
-
+import { displayRecipes } from "./recipes.js";
 
 const searchBtn = document.querySelector('.search-btn');
 const searchInput = document.querySelector('.search-input');
@@ -17,7 +17,7 @@ searchBtn.addEventListener('click', async () => {
   try {   
     const meals = await fetchAPI(query);
     console.log(meals);
-    // display recipes function
+    displayRecipes(meals, recipesContainer)
 } catch (error) {
     console.log(error);
     // Display error function

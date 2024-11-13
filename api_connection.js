@@ -6,8 +6,8 @@ const fetchAPI = async (query) => {
     if(!response.ok) {
       throw new Error('failed to fetch data');
     } else {
-      const data = response.json();
-      return data;
+      const data = await response.json();
+      return data.meals;
     }
   } catch (error) {
     console.log(error);
