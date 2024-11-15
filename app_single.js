@@ -12,6 +12,7 @@ const init = async() => {
     displaySingleRecipe(recipeData, container);
     const ingredientsContainer = document.querySelector('.s-recipe__ingredients-list');
     displayIngredientsList(recipeData, ingredientsContainer);    
+    document.title = `${recipeData.strMeal} - Recipe`;
   } else {
     console.log(`No recipe ID found`)
   }
